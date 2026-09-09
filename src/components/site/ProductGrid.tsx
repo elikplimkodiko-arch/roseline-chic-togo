@@ -40,7 +40,7 @@ export function SectionTitle({
 
 export function ProductCard({ item }: { item: Item }) {
   return (
-    <article className="group flex flex-col border border-border bg-card">
+    <article className="group flex flex-col border border-border bg-card transition-[transform,box-shadow,border-color] duration-500 hover:-translate-y-2 hover:border-gold hover:shadow-luxe">
       <div className="relative overflow-hidden">
         <img
           src={item.image}
@@ -60,14 +60,14 @@ export function ProductCard({ item }: { item: Item }) {
         <span className="eyebrow text-royal">{item.category}</span>
         <h3 className="mt-2 font-serif text-2xl text-navy-deep">{item.name}</h3>
         <p className="mt-2 flex-1 text-sm leading-relaxed text-muted-foreground">{item.note}</p>
-        <p className="mt-4 font-serif text-lg text-navy">{item.price}</p>
+        <p className="mt-4 font-serif text-lg text-navy">Prix communiqué sur WhatsApp</p>
         <a
           href={waProduct(item.name, item.price)}
           target="_blank"
           rel="noopener noreferrer"
-          className="mt-5 inline-flex items-center justify-center gap-2 bg-navy px-5 py-3 text-xs tracking-[0.18em] uppercase text-cream transition-colors hover:bg-royal"
+          className="mt-5 inline-flex items-center justify-center gap-2 bg-navy px-5 py-3 text-xs tracking-[0.18em] uppercase text-cream transition-all hover:-translate-y-0.5 hover:bg-royal"
         >
-          <MessageCircle className="h-4 w-4" /> Commander
+          <MessageCircle className="h-4 w-4" /> Demander le prix
         </a>
       </div>
     </article>
@@ -93,7 +93,7 @@ export default function FilterableGrid({
   const filtered = active === categories[0] ? items : items.filter((i) => i.category === active);
 
   return (
-    <section id={id} className="px-5 py-20 lg:px-10 lg:py-28">
+    <section id={id} className="px-5 py-24 lg:px-10 lg:py-32">
       <div className="mx-auto max-w-7xl">
         <SectionTitle eyebrow={eyebrow} title={title} intro={intro} />
 
@@ -114,7 +114,7 @@ export default function FilterableGrid({
           ))}
         </div>
 
-        <div className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
           {filtered.map((item) => (
             <ProductCard key={`${item.name}-${item.note}`} item={item} />
           ))}

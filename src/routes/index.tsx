@@ -6,6 +6,7 @@ import FilterableGrid from "@/components/site/ProductGrid";
 import WhatsAppFab from "@/components/site/WhatsAppFab";
 import {
   Selection,
+  VideoShowcase,
   Why,
   About,
   HowTo,
@@ -17,9 +18,9 @@ import {
 } from "@/components/site/Sections";
 import { shoes, shoeCategories, bags, bagCategories } from "@/data/products";
 
-const title = "Roseline Chop Line — Chaussures & Sacs professionnels à Tsévié, Togo";
+const title = "Roseline VIP Shop — Chaussures & Sacs à Tsévié";
 const description =
-  "Chaussures élégantes et sacs professionnels sélectionnés à Tsévié. Commande sur WhatsApp au +228 71 39 67 25, livraison partout au Togo.";
+  "Mules colorées, sacs élégants et combos à Tsévié. Demandez le prix sur WhatsApp et profitez de la livraison partout au Togo.";
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -43,7 +44,7 @@ export const Route = createFileRoute("/")({
         children: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "LocalBusiness",
-          name: "Roseline Chop Line",
+          name: "Roseline VIP Shop",
           description,
           image: "/favicon.ico",
           telephone: "+22871396725",
@@ -76,11 +77,12 @@ function Index() {
           items={shoes}
         />
         <Selection />
+        <VideoShowcase />
         <FilterableGrid
           id="sacs"
           eyebrow="Collection"
-          title="Sacs professionnels"
-          intro="Sacs business, cabas, sacs à main et bandoulières : du volume, de la tenue et des finitions à la hauteur de vos journées."
+          title="Sacs & combos VIP"
+          intro="Mini sacs colorés, grands cabas, pastels délicats et ensembles coordonnés : choisissez la pièce qui raconte votre style."
           categories={bagCategories}
           items={bags}
         />

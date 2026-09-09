@@ -33,10 +33,10 @@ export default function Header() {
       <div className="mx-auto grid max-w-7xl grid-cols-[minmax(0,1fr)_auto] items-center gap-4 px-5 py-4 lg:px-10">
         <a href="#accueil" className="min-w-0">
           <span className="block truncate font-serif text-lg tracking-[0.18em] text-cream sm:text-xl">
-            ROSELINE CHOP LINE
+            ROSELINE VIP SHOP
           </span>
           <span className="eyebrow mt-1 block text-gold-soft/80">
-            Chaussures &amp; Sacs professionnels
+            Chaussures • Sacs • Combos
           </span>
         </a>
 

@@ -10,10 +10,12 @@ import {
   MessageCircle,
   X,
   Quote,
+  Play,
 } from "lucide-react";
 import { SectionTitle } from "./ProductGrid";
 import { selection, galleryImages } from "@/data/products";
-import { waProduct, waOrder, waDelivery, waGeneral, PHONE_DISPLAY, PHONE_TEL } from "@/lib/wa";
+import { waProduct, waOrder, waDelivery, waGeneral, waCombo, PHONE_DISPLAY, PHONE_TEL } from "@/lib/wa";
+import comboVideoAsset from "@/assets/combo-sac-chaussure.mp4.asset.json";
 
 export function Selection() {
   return (
@@ -22,8 +24,8 @@ export function Selection() {
         <SectionTitle
           light
           eyebrow="Coups de cœur"
-          title="La Sélection Roseline"
-          intro="Trois pièces choisies chaque mois pour leur allure, leur confort et leur capacité à transformer une tenue de travail en véritable signature."
+          title="La Sélection VIP"
+          intro="Trois pièces choisies pour leur présence, leurs couleurs et leur capacité à transformer instantanément une tenue."
         />
         <div className="mt-14 grid gap-8 md:grid-cols-3">
           {selection.map((item) => (
@@ -49,7 +51,7 @@ export function Selection() {
                 rel="noopener noreferrer"
                 className="mt-4 inline-block border-b border-gold pb-1 text-xs tracking-[0.2em] uppercase text-gold"
               >
-                Commander ce modèle
+                Demander le prix
               </a>
             </article>
           ))}
@@ -105,20 +107,69 @@ export function Why() {
   );
 }
 
+export function VideoShowcase() {
+  return (
+    <section className="relative overflow-hidden bg-coral px-5 py-24 lg:px-10 lg:py-32">
+      <div className="absolute inset-y-0 right-0 w-1/3 bg-emerald/20" aria-hidden="true" />
+      <div className="relative mx-auto grid max-w-6xl items-center gap-14 lg:grid-cols-[0.82fr_1.18fr] lg:gap-24">
+        <div className="relative mx-auto w-full max-w-sm">
+          <div className="absolute -inset-4 border border-gold/70" aria-hidden="true" />
+          <video
+            controls
+            playsInline
+            preload="metadata"
+            poster={galleryImages[7]?.src}
+            aria-label="Vidéo des combos sacs et chaussures Roseline VIP Shop"
+            className="relative aspect-[9/16] w-full bg-navy-deep object-cover shadow-luxe"
+          >
+            <source src={comboVideoAsset.url} type="video/mp4" />
+          </video>
+          <span className="absolute left-4 top-4 inline-flex items-center gap-2 bg-gold px-3 py-2 text-[0.65rem] font-medium tracking-[0.2em] uppercase text-navy-deep">
+            <Play className="h-3.5 w-3.5" fill="currentColor" /> VIP en vidéo
+          </span>
+        </div>
+        <div className="text-cream">
+          <span className="eyebrow text-gold-soft">Le look complet</span>
+          <h2 className="mt-4 max-w-2xl font-serif text-4xl leading-tight sm:text-5xl lg:text-6xl">
+            Découvrez nos combos sacs &amp; chaussures en vidéo
+          </h2>
+          <div className="gold-rule mt-7 w-32" />
+          <p className="mt-7 max-w-xl text-base leading-relaxed text-cream/85">
+            Des associations pensées pour vous faire gagner du temps sans rien céder au style.
+            Regardez les détails, choisissez votre combo et demandez sa disponibilité en un message.
+          </p>
+          <a
+            href={waCombo}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-9 inline-flex items-center gap-2 bg-gold px-8 py-4 text-xs tracking-[0.2em] uppercase text-navy-deep transition-transform hover:-translate-y-1"
+          >
+            <MessageCircle className="h-4 w-4" /> Découvrir les combos
+          </a>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 export function About() {
+  const aboutImage = galleryImages[4];
+
   return (
     <section id="apropos" className="bg-blush/40 px-5 py-20 lg:px-10 lg:py-28">
       <div className="mx-auto grid max-w-6xl gap-12 lg:grid-cols-[1fr_1.1fr] lg:items-center lg:gap-20">
         <div className="relative">
           <div className="absolute -inset-3 border border-gold/40" aria-hidden="true" />
-          <img
-            src={galleryImages[1]!.src}
-            alt="Sac business en cuir bleu nuit de la boutique Roseline Chop Line"
-            loading="lazy"
-            width={900}
-            height={1100}
-            className="relative aspect-[4/5] w-full object-cover"
-          />
+          {aboutImage && (
+            <img
+              src={aboutImage.src}
+              alt="Sacs multicolores sélectionnés par Roseline VIP Shop"
+              loading="lazy"
+              width={900}
+              height={1100}
+              className="relative aspect-[4/5] w-full object-cover transition-transform duration-700 hover:scale-[1.02]"
+            />
+          )}
         </div>
         <div>
           <span className="eyebrow text-royal">À propos</span>
@@ -127,7 +178,7 @@ export function About() {
           </h2>
           <div className="gold-rule mt-6 w-24" />
           <p className="mt-6 text-sm leading-relaxed text-navy/80">
-            Roseline Chop Line est née d'une conviction simple : une paire de chaussures bien
+            Roseline VIP Shop est née d'une conviction simple : une paire de chaussures bien
             choisie et un sac à la hauteur changent la façon dont on entre dans une pièce. Depuis
             Tsévié, nous réunissons des chaussures élégantes et des sacs professionnels pensés
             pour le travail, les rendez-vous importants et les grandes occasions.
@@ -291,11 +342,13 @@ export function Gallery() {
           >
             <X className="h-7 w-7" />
           </button>
-          <img
-            src={galleryImages[open]!.src}
-            alt={galleryImages[open]!.alt}
-            className="max-h-[85vh] w-auto max-w-full object-contain"
-          />
+          {galleryImages[open] && (
+            <img
+              src={galleryImages[open].src}
+              alt={galleryImages[open].alt}
+              className="max-h-[85vh] w-auto max-w-full object-contain"
+            />
+          )}
         </div>
       )}
     </section>
@@ -304,19 +357,54 @@ export function Gallery() {
 
 const testimonials = [
   {
-    text: "J'ai reçu mes escarpins à Lomé en deux jours, exactement la couleur annoncée. Un service impeccable.",
-    name: "Afi K.",
+    text: "Mes mules sont arrivées rapidement à Lomé. La couleur est magnifique et elles sont vraiment confortables.",
+    name: "Akossiwa",
     city: "Lomé",
   },
   {
-    text: "Mon sac business ne me quitte plus au bureau. Beau, solide, et le conseil de Roseline était juste.",
-    name: "Sandrine A.",
+    text: "Le sac est encore plus beau en vrai. Roseline a pris le temps de me conseiller et la livraison a été très simple.",
+    name: "Kafui",
+    city: "Tsévié",
+  },
+  {
+    text: "J'ai commandé un combo sac et chaussures pour un événement. Tout était bien assorti et très soigné.",
+    name: "Ablavi",
     city: "Kpalimé",
   },
   {
-    text: "Accueil chaleureux à Tsévié et vrais conseils de style. Je recommande sans hésiter.",
-    name: "Yawa D.",
-    city: "Tsévié",
+    text: "Livraison rapide jusqu'à Kara et emballage impeccable. Mon cabas est spacieux et solide.",
+    name: "Mawuena",
+    city: "Kara",
+  },
+  {
+    text: "Les chaussures sont légères et confortables même après une longue journée. Très satisfaite de mon choix.",
+    name: "Essi",
+    city: "Sokodé",
+  },
+  {
+    text: "J'adore les couleurs proposées. Mon mini sac apporte exactement la touche vive que je cherchais.",
+    name: "Fafali",
+    city: "Atakpamé",
+  },
+  {
+    text: "Commande claire sur WhatsApp et réception sans difficulté à Aného. La qualité du sac m'a agréablement surprise.",
+    name: "Ayawa",
+    city: "Aného",
+  },
+  {
+    text: "Les doubles boucles sont élégantes et la semelle est très agréable. Je peux les porter toute la journée.",
+    name: "Sena",
+    city: "Notsè",
+  },
+  {
+    text: "Mon sac pastel est raffiné et facile à assortir. Le suivi jusqu'à la livraison était rassurant.",
+    name: "Adjoa",
+    city: "Dapaong",
+  },
+  {
+    text: "Une belle sélection, un accueil attentionné et une livraison rapide. Je commanderai encore avec plaisir.",
+    name: "Elom",
+    city: "Lomé",
   },
 ];
 
@@ -327,11 +415,11 @@ export function Testimonials() {
         <SectionTitle
           eyebrow="Témoignages"
           title="Ce que disent nos clientes"
-          intro="Quelques retours reçus sur WhatsApp après livraison."
+          intro="Dix expériences inspirées des qualités les plus appréciées : conseil, confort, style et livraison nationale."
         />
-        <div className="mt-14 grid gap-8 md:grid-cols-3">
+        <div className="mt-14 columns-1 gap-6 sm:columns-2 lg:columns-3">
           {testimonials.map((t) => (
-            <figure key={t.name} className="border border-border bg-card p-8">
+            <figure key={t.name} className="mb-6 break-inside-avoid border border-border bg-card p-8 transition-[transform,box-shadow] duration-500 hover:-translate-y-1 hover:shadow-luxe">
               <Quote className="h-6 w-6 text-gold" strokeWidth={1.5} />
               <blockquote className="mt-5 font-serif text-xl leading-relaxed text-navy-deep italic">
                 « {t.text} »
@@ -342,6 +430,9 @@ export function Testimonials() {
             </figure>
           ))}
         </div>
+        <p className="mt-8 text-center text-xs text-muted-foreground">
+          Textes proposés pour validation avant publication.
+        </p>
       </div>
     </section>
   );
@@ -388,7 +479,7 @@ export function Footer() {
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
           <div>
             <span className="font-serif text-lg tracking-[0.18em] text-cream">
-              ROSELINE CHOP LINE
+              ROSELINE VIP SHOP
             </span>
             <p className="mt-4 text-sm leading-relaxed text-cream/60">
               Chaussures &amp; sacs professionnels. Boutique à Tsévié, livraison partout au Togo.
@@ -445,7 +536,7 @@ export function Footer() {
         </div>
         <div className="gold-rule mt-12" />
         <p className="mt-6 text-center text-xs tracking-[0.14em] uppercase text-cream/45">
-          © 2026 Roseline Chop Line — Tous droits réservés
+          © 2026 Roseline VIP Shop — Tous droits réservés
         </p>
       </div>
     </footer>
