@@ -1,13 +1,11 @@
-import escarpins from "@/assets/escarpins-navy.jpg";
-import talons from "@/assets/talons-blush.jpg";
-import mocassins from "@/assets/mocassins-noir.jpg";
-import bottines from "@/assets/bottines-navy.jpg";
-import sandales from "@/assets/sandales-or.jpg";
-import sacBusiness from "@/assets/sac-business.jpg";
-import sacCabas from "@/assets/sac-cabas.jpg";
-import sacMain from "@/assets/sac-main.jpg";
-import sacOrdinateur from "@/assets/sac-ordinateur.jpg";
-import sacBandouliere from "@/assets/sac-bandouliere.jpg";
+import mulesHAsset from "@/assets/mules-h-multicolores.jpg.asset.json";
+import doubleBoucleAsset from "@/assets/sandales-double-boucle.jpg.asset.json";
+import strassAsset from "@/assets/mules-strass-multicolores.jpg.asset.json";
+import mulesBlanchesAsset from "@/assets/mules-blanches-talon.jpg.asset.json";
+import sacsZaraAsset from "@/assets/sacs-zara-multicolores.jpg.asset.json";
+import cabasAsset from "@/assets/cabas-monogramme.jpg.asset.json";
+import pastelAsset from "@/assets/sacs-pastel-chic.jpg.asset.json";
+import comboAsset from "@/assets/combo-sac-ballerines.jpg.asset.json";
 
 export type Item = {
   name: string;
@@ -20,148 +18,124 @@ export type Item = {
 
 export const shoeCategories = [
   "Tout",
-  "Escarpins",
-  "Talons",
-  "Mocassins",
-  "Bottines",
+  "Mules",
   "Sandales",
+  "Talons",
 ];
 
 export const shoes: Item[] = [
   {
-    name: "Escarpin Nuit Royale",
-    category: "Escarpins",
-    image: escarpins,
+    name: "Mules H Arc-en-ciel",
+    category: "Mules",
+    image: mulesHAsset.url,
     price: "Prix sur demande",
-    note: "Verni bleu nuit, bout effilé, ornement doré",
-    badge: "Signature",
+    note: "Une ligne graphique déclinée dans des couleurs franches et lumineuses.",
+    badge: "Multicolore",
   },
   {
-    name: "Talon Blush Bureau",
-    category: "Talons",
-    image: talons,
-    price: "Prix sur demande",
-    note: "Talon bloc 7 cm, cuir souple, confort journée",
-  },
-  {
-    name: "Mocassin Noir Classique",
-    category: "Mocassins",
-    image: mocassins,
-    price: "Prix sur demande",
-    note: "Cuir lisse, ligne intemporelle, tenue impeccable",
-  },
-  {
-    name: "Bottine Nuit Structurée",
-    category: "Bottines",
-    image: bottines,
-    price: "Prix sur demande",
-    note: "Zip latéral, talon stable, allure affirmée",
-  },
-  {
-    name: "Sandale Or Éclat",
+    name: "Sandales Double Boucle Signature",
     category: "Sandales",
-    image: sandales,
+    image: doubleBoucleAsset.url,
     price: "Prix sur demande",
-    note: "Cuir métallisé doré, plate et élégante",
-    badge: "Nouveau",
+    note: "Beige ou noir, deux boucles dorées et une semelle pensée pour le quotidien.",
+    badge: "Confort",
   },
   {
-    name: "Escarpin Verni Pointu",
-    category: "Escarpins",
-    image: escarpins,
+    name: "Mules Strass Éclat",
+    category: "Mules",
+    image: strassAsset.url,
     price: "Prix sur demande",
-    note: "L'allure parfaite pour vos rendez-vous d'affaires",
+    note: "Couleurs vibrantes, détails scintillants et allure festive assumée.",
+    badge: "Éclat VIP",
+  },
+  {
+    name: "Mules Blanches Valentino",
+    category: "Talons",
+    image: mulesBlanchesAsset.url,
+    price: "Prix sur demande",
+    note: "Blanc éclatant, talon sculpté et boucle dorée pour une allure précieuse.",
+    badge: "Chic",
   },
 ];
 
 export const bagCategories = [
   "Tout",
-  "Business",
-  "Cabas",
   "Sacs à main",
-  "Bandoulière",
+  "Grands cabas",
+  "Collections",
+  "Sacs à main",
+  "Combos",
 ];
 
 export const bags: Item[] = [
   {
-    name: "Sac Business Nuit",
-    category: "Business",
-    image: sacBusiness,
-    price: "Prix sur demande",
-    note: "Cuir grainé bleu nuit, finitions dorées, format A4",
-    badge: "Best-seller",
-  },
-  {
-    name: "Cabas Grège Atelier",
-    category: "Cabas",
-    image: sacCabas,
-    price: "Prix sur demande",
-    note: "Grand volume, port épaule, quotidien professionnel",
-  },
-  {
-    name: "Sac Main Soirée Matelassé",
+    name: "Mini Sacs Tressés Couleurs",
     category: "Sacs à main",
-    image: sacMain,
+    image: sacsZaraAsset.url,
     price: "Prix sur demande",
-    note: "Chaîne dorée, cuir matelassé, format élégant",
+    note: "Poignées tressées, format structuré et palette joyeuse pour chaque tenue.",
+    badge: "Collection couleur",
   },
   {
-    name: "Porte-ordinateur Bordeaux",
-    category: "Business",
-    image: sacOrdinateur,
+    name: "Grand Cabas Monogramme Teddy",
+    category: "Grands cabas",
+    image: cabasAsset.url,
     price: "Prix sur demande",
-    note: "Compartiment 14\", bandoulière amovible",
+    note: "Grand format, longues anses et pendentif peluche pour une touche signature.",
+    badge: "Maxi format",
   },
   {
-    name: "Mini Bandoulière Nuit",
-    category: "Bandoulière",
-    image: sacBandouliere,
+    name: "Collection Pastel Élégance",
+    category: "Collections",
+    image: pastelAsset.url,
     price: "Prix sur demande",
-    note: "Chaîne dorée, mains libres, tenue soignée",
+    note: "Rose poudré, camel, vert d'eau et noir matelassé aux finitions dorées.",
+    badge: "Coup de cœur",
   },
   {
-    name: "Cabas Cuir Souple",
-    category: "Cabas",
-    image: sacCabas,
+    name: "Combo Monogramme Sac & Ballerines",
+    category: "Combos",
+    image: comboAsset.url,
     price: "Prix sur demande",
-    note: "Souple et spacieux, parfait pour le bureau",
+    note: "Un ensemble coordonné aux tons crème et or pour une silhouette harmonieuse.",
+    badge: "Combo exclusif",
   },
 ];
 
 export const selection: Item[] = [
   {
-    name: "Escarpin Nuit Royale",
+    name: "Mules Blanches Valentino",
     category: "Coup de cœur",
-    image: escarpins,
+    image: mulesBlanchesAsset.url,
     price: "Prix sur demande",
-    note: "La pièce qui signe une silhouette",
+    note: "La touche blanche et or qui illumine une silhouette.",
     badge: "Édition limitée",
   },
   {
-    name: "Sac Business Nuit",
+    name: "Collection Pastel Élégance",
     category: "Coup de cœur",
-    image: sacBusiness,
+    image: pastelAsset.url,
     price: "Prix sur demande",
-    note: "L'allié des femmes qui décident",
-    badge: "Favori clientes",
+    note: "Des teintes douces et des formats pour chaque moment.",
+    badge: "Palette VIP",
   },
   {
-    name: "Sandale Or Éclat",
+    name: "Mules Strass Éclat",
     category: "Coup de cœur",
-    image: sandales,
+    image: strassAsset.url,
     price: "Prix sur demande",
-    note: "L'éclat discret des grandes occasions",
+    note: "La couleur et la lumière au centre de votre look.",
     badge: "Nouveauté",
   },
 ];
 
 export const galleryImages = [
-  { src: escarpins, alt: "Escarpins vernis bleu nuit à ornement doré" },
-  { src: sacBusiness, alt: "Sac business en cuir grainé bleu nuit" },
-  { src: talons, alt: "Talons blocs en cuir blush" },
-  { src: sacMain, alt: "Sac à main matelassé noir à chaîne dorée" },
-  { src: mocassins, alt: "Mocassins noirs en cuir lisse" },
-  { src: sacCabas, alt: "Cabas grège en cuir souple" },
-  { src: bottines, alt: "Bottines bleu nuit à talon stable" },
-  { src: sacBandouliere, alt: "Mini sac bandoulière bleu nuit à chaîne dorée" },
+  { src: mulesHAsset.url, alt: "Mules H multicolores de la collection Roseline VIP Shop" },
+  { src: doubleBoucleAsset.url, alt: "Sandales beige et noir à double boucle dorée" },
+  { src: strassAsset.url, alt: "Mules multicolores ornées de strass" },
+  { src: mulesBlanchesAsset.url, alt: "Mules blanches à talon et boucle dorée" },
+  { src: sacsZaraAsset.url, alt: "Sacs à main multicolores à poignées tressées" },
+  { src: cabasAsset.url, alt: "Grands cabas monogramme avec pendentif peluche" },
+  { src: pastelAsset.url, alt: "Collection de sacs pastel et noir matelassé" },
+  { src: comboAsset.url, alt: "Combo sac et ballerines monogramme crème" },
 ];

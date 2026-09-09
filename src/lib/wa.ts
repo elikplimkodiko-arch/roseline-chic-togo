@@ -8,20 +8,22 @@ export function waLink(message: string) {
 
 export function waProduct(name: string, price?: string) {
   return waLink(
-    `Bonjour Roseline Chop Line 👋, je suis intéressé(e) par le modèle "${name}"${
-      price ? ` (${price})` : ""
-    }. Est-il disponible et quelles tailles proposez-vous ?`,
+    `Bonjour Roseline VIP Shop 👋, je souhaite connaître le prix et la disponibilité du modèle ${name}. Pouvez-vous me renseigner ?`,
   );
 }
 
 export const waGeneral = waLink(
-  "Bonjour Roseline Chop Line 👋, je souhaite des informations sur vos chaussures et sacs professionnels.",
+  "Bonjour Roseline VIP Shop 👋, je souhaite des informations sur vos chaussures et sacs.",
 );
 
 export const waOrder = waLink(
-  "Bonjour Roseline Chop Line 👋, je voudrais passer une commande. Pouvez-vous m'aider à choisir mon modèle ?",
+  "Bonjour Roseline VIP Shop 👋, je voudrais passer une commande. Pouvez-vous m'aider à choisir mon modèle ?",
 );
 
 export const waDelivery = waLink(
-  "Bonjour Roseline Chop Line 👋, je souhaite connaître les conditions de livraison vers ma ville au Togo.",
+  "Bonjour Roseline VIP Shop 👋, je souhaite connaître les conditions de livraison vers ma ville au Togo.",
+);
+
+export const waCombo = waLink(
+  "Bonjour Roseline VIP Shop 👋, je souhaite connaître les combos sacs et chaussures disponibles. Pouvez-vous me renseigner ?",
 );

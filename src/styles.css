@@ -38,17 +38,24 @@
   --color-gold-soft: var(--gold-soft);
   --color-blush: var(--blush);
   --color-cream: var(--cream);
+  --color-coral: var(--coral);
+  --color-emerald: var(--emerald);
+  --color-sky: var(--sky);
+  --shadow-luxe: 0 24px 55px -28px color-mix(in oklab, var(--navy) 38%, transparent);
 }
 
 :root {
   --radius: 0.25rem;
-  --cream: oklch(0.976 0.008 85);
+  --cream: oklch(0.992 0.004 95);
   --navy: oklch(0.256 0.078 265);
   --navy-deep: oklch(0.19 0.062 266);
   --royal: oklch(0.4 0.15 265);
   --gold: oklch(0.76 0.11 85);
   --gold-soft: oklch(0.88 0.06 88);
   --blush: oklch(0.9 0.035 20);
+  --coral: oklch(0.67 0.2 25);
+  --emerald: oklch(0.58 0.15 155);
+  --sky: oklch(0.68 0.14 225);
 
   --background: var(--cream);
   --foreground: var(--navy-deep);
@@ -108,4 +115,30 @@
     var(--color-gold),
     transparent
   );
+}
+
+@keyframes reveal-up {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@utility animate-reveal {
+  animation: reveal-up 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
