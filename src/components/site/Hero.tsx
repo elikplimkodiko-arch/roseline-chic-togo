@@ -1,3 +1,4 @@
+import { MapPin } from "lucide-react";
 import heroAsset from "@/assets/roseline-hero.jpg.asset.json";
 import { waOrder } from "@/lib/wa";
 
@@ -6,8 +7,8 @@ export default function Hero() {
     <section id="accueil" className="relative overflow-hidden bg-navy-deep pt-28 lg:pt-36">
       <div className="mx-auto grid max-w-7xl items-center gap-12 px-5 pb-16 lg:grid-cols-2 lg:gap-16 lg:px-10 lg:pb-24">
         <div className="order-2 lg:order-1">
-          <span className="inline-block border border-gold/40 px-4 py-2 text-xs tracking-[0.18em] text-gold-soft">
-            📍 Tsévié • Livraison partout au Togo
+          <span className="inline-flex items-center gap-2 border border-gold/40 px-4 py-2 text-xs tracking-[0.18em] text-gold-soft">
+            <MapPin className="h-3.5 w-3.5" strokeWidth={1.75} /> Tsévié • Livraison partout au Togo
           </span>
           <h1 className="mt-7 font-serif text-4xl leading-[1.08] text-cream sm:text-5xl lg:text-6xl">
             Votre style mérite
@@ -43,9 +44,9 @@ export default function Hero() {
             <img
               src={heroAsset.url}
               alt="Roseline, fondatrice de Roseline Chop Line, en tailleur bleu nuit et escarpins vernis"
-              width={716}
-              height={1600}
-              className="relative aspect-[3/4] w-full object-cover object-top"
+              width={720}
+              height={961}
+              className="relative aspect-[3/4] w-full object-cover object-center"
             />
           </div>
         </div>
