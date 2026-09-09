@@ -112,7 +112,7 @@ export function About() {
         <div className="relative">
           <div className="absolute -inset-3 border border-gold/40" aria-hidden="true" />
           <img
-            src={galleryImages[1].src}
+            src={galleryImages[1]!.src}
             alt="Sac business en cuir bleu nuit de la boutique Roseline Chop Line"
             loading="lazy"
             width={900}
@@ -292,8 +292,8 @@ export function Gallery() {
             <X className="h-7 w-7" />
           </button>
           <img
-            src={galleryImages[open].src}
-            alt={galleryImages[open].alt}
+            src={galleryImages[open]!.src}
+            alt={galleryImages[open]!.alt}
             className="max-h-[85vh] w-auto max-w-full object-contain"
           />
         </div>
