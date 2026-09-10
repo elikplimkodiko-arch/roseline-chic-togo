@@ -27,8 +27,8 @@ export function SectionTitle({
       <div className="gold-rule mx-auto mt-6 w-24" />
       {intro && (
         <p
-          className={`mt-6 text-sm leading-relaxed ${
-            light ? "text-cream/70" : "text-muted-foreground"
+          className={`mt-6 text-[0.95rem] leading-relaxed ${
+            light ? "text-cream/85" : "text-navy"
           }`}
         >
           {intro}
@@ -40,7 +40,7 @@ export function SectionTitle({
 
 export function ProductCard({ item }: { item: Item }) {
   return (
-    <article className="group flex flex-col border border-border bg-card transition-[transform,box-shadow,border-color] duration-500 hover:-translate-y-2 hover:border-gold hover:shadow-luxe">
+    <article className="card-luxe group flex flex-col">
       <div className="relative overflow-hidden">
         <img
           src={item.image}
@@ -48,24 +48,24 @@ export function ProductCard({ item }: { item: Item }) {
           loading="lazy"
           width={900}
           height={1100}
-          className="aspect-[4/5] w-full object-cover transition-transform duration-700 group-hover:scale-105"
+          className="aspect-[4/5] w-full object-cover transition-transform duration-[900ms] group-hover:scale-[1.08]"
         />
         {item.badge && (
-          <span className="absolute left-0 top-4 bg-navy-deep px-3 py-1.5 text-[0.65rem] tracking-[0.18em] uppercase text-gold">
+          <span className="absolute left-0 top-4 bg-navy-deep px-3 py-1.5 text-[0.65rem] font-semibold tracking-[0.18em] uppercase text-gold">
             {item.badge}
           </span>
         )}
       </div>
-      <div className="flex flex-1 flex-col p-6">
+      <div className="flex flex-1 flex-col p-7">
         <span className="eyebrow text-royal">{item.category}</span>
         <h3 className="mt-2 font-serif text-2xl text-navy-deep">{item.name}</h3>
-        <p className="mt-2 flex-1 text-sm leading-relaxed text-muted-foreground">{item.note}</p>
-        <p className="mt-4 font-serif text-lg text-navy">Prix communiqué sur WhatsApp</p>
+        <p className="mt-2 flex-1 text-sm leading-relaxed text-navy/85">{item.note}</p>
+        <p className="mt-4 text-sm font-semibold text-navy-deep">Prix communiqué sur WhatsApp</p>
         <a
           href={waProduct(item.name, item.price)}
           target="_blank"
           rel="noopener noreferrer"
-          className="mt-5 inline-flex items-center justify-center gap-2 bg-navy px-5 py-3 text-xs tracking-[0.18em] uppercase text-cream transition-all hover:-translate-y-0.5 hover:bg-royal"
+          className="btn-gold mt-5 inline-flex items-center justify-center gap-2 px-5 py-3.5 text-xs font-semibold tracking-[0.18em] uppercase"
         >
           <MessageCircle className="h-4 w-4" /> Demander le prix
         </a>
@@ -103,10 +103,10 @@ export default function FilterableGrid({
               key={c}
               type="button"
               onClick={() => setActive(c)}
-              className={`border px-5 py-2.5 text-xs tracking-[0.16em] uppercase transition-colors ${
+              className={`border-2 px-5 py-2.5 text-xs font-semibold tracking-[0.16em] uppercase transition-colors ${
                 active === c
-                  ? "border-navy bg-navy text-cream"
-                  : "border-border text-navy hover:border-gold"
+                  ? "border-navy-deep bg-navy-deep text-cream"
+                  : "border-border text-navy-deep hover:border-gold"
               }`}
             >
               {c}

@@ -63,7 +63,6 @@ export const bagCategories = [
   "Sacs à main",
   "Grands cabas",
   "Collections",
-  "Sacs à main",
   "Combos",
 ];
 
