@@ -472,9 +472,9 @@ export function Testimonials() {
           {testimonials.map((t) => (
             <figure
               key={t.name}
-              className="card-luxe relative flex flex-col p-7 pt-8"
+              className="card-luxe flex flex-col p-7"
             >
-              <span className="absolute right-5 top-5 inline-flex items-center gap-1 rounded-full bg-emerald/12 px-2.5 py-1 text-[0.6rem] font-bold tracking-[0.1em] uppercase text-emerald">
+              <span className="mb-5 inline-flex w-fit items-center gap-1 rounded-full bg-emerald/12 px-2.5 py-1 text-[0.6rem] font-bold tracking-[0.1em] uppercase text-emerald">
                 <BadgeCheck className="h-3.5 w-3.5" strokeWidth={2.5} /> Commande vérifiée
               </span>
               <div className="flex items-center gap-3">
