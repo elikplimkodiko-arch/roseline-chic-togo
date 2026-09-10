@@ -11,11 +11,23 @@ import {
   X,
   Quote,
   Play,
+  Star,
+  BadgeCheck,
 } from "lucide-react";
 import { SectionTitle } from "./ProductGrid";
 import { selection, galleryImages } from "@/data/products";
 import { waProduct, waOrder, waDelivery, waGeneral, waCombo, PHONE_DISPLAY, PHONE_TEL } from "@/lib/wa";
 import comboVideoAsset from "@/assets/combo-sac-chaussure.mp4.asset.json";
+import cliente1 from "@/assets/cliente-1.jpg.asset.json";
+import cliente2 from "@/assets/cliente-2.jpg.asset.json";
+import cliente3 from "@/assets/cliente-3.jpg.asset.json";
+import cliente4 from "@/assets/cliente-4.jpg.asset.json";
+import cliente5 from "@/assets/cliente-5.jpg.asset.json";
+import cliente6 from "@/assets/cliente-6.jpg.asset.json";
+import cliente7 from "@/assets/cliente-7.jpg.asset.json";
+import cliente8 from "@/assets/cliente-8.jpg.asset.json";
+import cliente9 from "@/assets/cliente-9.jpg.asset.json";
+import cliente10 from "@/assets/cliente-10.jpg.asset.json";
 
 export function Selection() {
   return (
