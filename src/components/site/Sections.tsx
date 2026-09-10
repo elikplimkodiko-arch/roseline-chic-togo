@@ -468,15 +468,47 @@ export function Testimonials() {
           title="Ce que disent nos clientes"
           intro="Dix expériences inspirées des qualités les plus appréciées : conseil, confort, style et livraison nationale."
         />
-        <div className="mt-14 columns-1 gap-6 sm:columns-2 lg:columns-3">
+        <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           {testimonials.map((t) => (
-            <figure key={t.name} className="card-luxe mb-6 break-inside-avoid p-8">
-              <Quote className="h-6 w-6 text-gold" strokeWidth={1.5} />
-              <blockquote className="mt-5 font-serif text-xl leading-relaxed text-navy-deep italic">
+            <figure
+              key={t.name}
+              className="card-luxe relative flex flex-col p-7 pt-8"
+            >
+              <span className="absolute right-5 top-5 inline-flex items-center gap-1 rounded-full bg-emerald/12 px-2.5 py-1 text-[0.6rem] font-bold tracking-[0.1em] uppercase text-emerald">
+                <BadgeCheck className="h-3.5 w-3.5" strokeWidth={2.5} /> Commande vérifiée
+              </span>
+              <div className="flex items-center gap-3">
+                <img
+                  src={t.avatar}
+                  alt={`${t.name}, cliente à ${t.city}`}
+                  loading="lazy"
+                  width={320}
+                  height={320}
+                  className="h-14 w-14 rounded-full border-2 border-gold object-cover"
+                />
+                <div>
+                  <p className="font-serif text-lg leading-tight font-semibold text-navy-deep">
+                    {t.name}
+                  </p>
+                  <p className="mt-0.5 inline-flex items-center gap-1 text-[0.7rem] font-bold tracking-[0.14em] uppercase text-royal">
+                    <MapPin className="h-3 w-3" strokeWidth={2.5} /> {t.city}
+                  </p>
+                </div>
+              </div>
+
+              <div className="mt-5 flex items-center justify-between gap-3">
+                <Stars />
+                <span className="inline-flex items-center gap-1.5 rounded-full bg-emerald px-2.5 py-1 text-[0.6rem] font-bold tracking-[0.12em] uppercase text-cream">
+                  <WhatsAppGlyph /> Avis WhatsApp
+                </span>
+              </div>
+
+              <Quote className="mt-5 h-5 w-5 text-gold" strokeWidth={1.5} />
+              <blockquote className="mt-2 flex-1 text-[0.95rem] leading-relaxed text-navy">
                 « {t.text} »
               </blockquote>
-              <figcaption className="mt-6 eyebrow text-royal">
-                {t.name} — {t.city}
+              <figcaption className="mt-5 border-t border-gold/30 pt-4 text-[0.7rem] font-bold tracking-[0.12em] uppercase text-navy-deep">
+                Modèle acheté : <span className="text-royal">{t.model}</span>
               </figcaption>
             </figure>
           ))}
