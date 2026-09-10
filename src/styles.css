@@ -10,8 +10,8 @@
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
   --radius-2xl: calc(var(--radius) + 8px);
-  --font-serif: "Cormorant Garamond", Georgia, serif;
-  --font-sans: "Jost", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Playfair Display", Georgia, serif;
+  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -41,7 +41,8 @@
   --color-coral: var(--coral);
   --color-emerald: var(--emerald);
   --color-sky: var(--sky);
-  --shadow-luxe: 0 24px 55px -28px color-mix(in oklab, var(--navy) 38%, transparent);
+  --shadow-luxe: 0 30px 70px -30px color-mix(in oklab, var(--navy-deep) 45%, transparent);
+  --shadow-soft: 0 10px 30px -18px color-mix(in oklab, var(--navy-deep) 35%, transparent);
 }
 
 :root {
