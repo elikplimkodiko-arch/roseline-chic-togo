@@ -44,7 +44,7 @@ export function Selection() {
                 </span>
               </div>
               <h3 className="mt-5 font-serif text-2xl text-cream">{item.name}</h3>
-              <p className="mt-2 text-sm text-cream/65">{item.note}</p>
+              <p className="mt-2 text-sm text-cream/80">{item.note}</p>
               <a
                 href={waProduct(item.name, item.price)}
                 target="_blank"
@@ -95,10 +95,10 @@ export function Why() {
         />
         <div className="mt-14 grid gap-px overflow-hidden border border-border bg-border sm:grid-cols-2 lg:grid-cols-4">
           {reasons.map((r) => (
-            <div key={r.title} className="bg-card p-8">
+            <div key={r.title} className="card-luxe p-8">
               <r.icon className="h-7 w-7 text-gold" strokeWidth={1.5} />
               <h3 className="mt-5 font-serif text-2xl text-navy-deep">{r.title}</h3>
-              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{r.text}</p>
+              <p className="mt-3 text-sm leading-relaxed text-navy/85">{r.text}</p>
             </div>
           ))}
         </div>
@@ -142,7 +142,7 @@ export function VideoShowcase() {
             href={waCombo}
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-9 inline-flex items-center gap-2 bg-gold px-8 py-4 text-xs tracking-[0.2em] uppercase text-navy-deep transition-transform hover:-translate-y-1"
+            className="btn-gold mt-9 inline-flex items-center gap-2 px-8 py-4 text-xs font-semibold tracking-[0.2em] uppercase"
           >
             <MessageCircle className="h-4 w-4" /> Découvrir les combos
           </a>
@@ -177,13 +177,13 @@ export function About() {
             L'élégance commence par le bon choix
           </h2>
           <div className="gold-rule mt-6 w-24" />
-          <p className="mt-6 text-sm leading-relaxed text-navy/80">
+          <p className="mt-6 text-[0.95rem] leading-relaxed text-navy">
             Roseline VIP Shop est née d'une conviction simple : une paire de chaussures bien
             choisie et un sac à la hauteur changent la façon dont on entre dans une pièce. Depuis
             Tsévié, nous réunissons des chaussures élégantes et des sacs professionnels pensés
             pour le travail, les rendez-vous importants et les grandes occasions.
           </p>
-          <p className="mt-4 text-sm leading-relaxed text-navy/80">
+          <p className="mt-4 text-[0.95rem] leading-relaxed text-navy">
             Chaque modèle est sélectionné à la main, essayé et validé avant d'être proposé. Ancrée
             localement, la boutique accompagne une clientèle exigeante partout au Togo, avec le
             même soin qu'en boutique : écoute, conseil et suivi jusqu'à la livraison.
@@ -192,7 +192,7 @@ export function About() {
             href={waGeneral}
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-8 inline-block bg-navy px-8 py-4 text-xs tracking-[0.2em] uppercase text-cream transition-colors hover:bg-royal"
+            className="mt-8 inline-block bg-navy-deep px-8 py-4 text-xs font-semibold tracking-[0.2em] uppercase text-cream transition-colors hover:bg-royal"
           >
             Échanger avec Roseline
           </a>
@@ -234,7 +234,7 @@ export function HowTo() {
             <div key={s.n} className="border-t border-gold pt-6">
               <span className="font-serif text-4xl text-gold">{s.n}</span>
               <h3 className="mt-3 font-serif text-2xl text-navy-deep">{s.title}</h3>
-              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{s.text}</p>
+              <p className="mt-3 text-sm leading-relaxed text-navy/85">{s.text}</p>
             </div>
           ))}
         </div>
@@ -243,7 +243,7 @@ export function HowTo() {
             href={waOrder}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 bg-gold px-9 py-4 text-xs tracking-[0.22em] uppercase text-navy-deep"
+            className="btn-gold inline-flex items-center gap-2 px-9 py-4 text-xs font-semibold tracking-[0.22em] uppercase"
           >
             <MessageCircle className="h-4 w-4" /> Commander maintenant
           </a>
@@ -262,7 +262,7 @@ export function Delivery() {
           Livraison partout au Togo
         </h2>
         <div className="gold-rule mx-auto mt-6 w-24" />
-        <p className="mx-auto mt-6 max-w-2xl text-sm leading-relaxed text-cream/75">
+        <p className="mx-auto mt-6 max-w-2xl text-sm leading-relaxed text-cream/85">
           Depuis notre boutique de Tsévié, nous expédions dans toutes les régions du pays. Retrait
           sur place possible, ou envoi par le transporteur de votre choix. Les frais et le délai
           vous sont confirmés sur WhatsApp avant l'expédition.
@@ -276,7 +276,7 @@ export function Delivery() {
             <div key={c.t} className="bg-navy p-8">
               <c.icon className="mx-auto h-6 w-6 text-gold" strokeWidth={1.5} />
               <h3 className="mt-4 font-serif text-xl text-cream">{c.t}</h3>
-              <p className="mt-2 text-sm text-cream/65">{c.d}</p>
+              <p className="mt-2 text-sm text-cream/80">{c.d}</p>
             </div>
           ))}
         </div>
@@ -419,7 +419,7 @@ export function Testimonials() {
         />
         <div className="mt-14 columns-1 gap-6 sm:columns-2 lg:columns-3">
           {testimonials.map((t) => (
-            <figure key={t.name} className="mb-6 break-inside-avoid border border-border bg-card p-8 transition-[transform,box-shadow] duration-500 hover:-translate-y-1 hover:shadow-luxe">
+            <figure key={t.name} className="card-luxe mb-6 break-inside-avoid p-8">
               <Quote className="h-6 w-6 text-gold" strokeWidth={1.5} />
               <blockquote className="mt-5 font-serif text-xl leading-relaxed text-navy-deep italic">
                 « {t.text} »
@@ -447,7 +447,7 @@ export function Contact() {
           Parlons de votre prochaine pièce
         </h2>
         <div className="gold-rule mx-auto mt-6 w-24" />
-        <p className="mt-6 text-sm text-muted-foreground">
+        <p className="mt-6 text-sm font-medium text-navy">
           Boutique à Tsévié, Togo • Livraison partout au Togo
         </p>
         <p className="mt-8 font-serif text-3xl text-navy sm:text-4xl">{PHONE_DISPLAY}</p>
@@ -462,7 +462,7 @@ export function Contact() {
             href={waGeneral}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center gap-2 bg-gold px-8 py-4 text-xs tracking-[0.2em] uppercase text-navy-deep"
+            className="btn-gold inline-flex items-center justify-center gap-2 px-8 py-4 text-xs font-semibold tracking-[0.2em] uppercase"
           >
             <MessageCircle className="h-4 w-4" /> Écrire sur WhatsApp
           </a>
@@ -487,7 +487,7 @@ export function Footer() {
           </div>
           <div>
             <h3 className="eyebrow text-gold-soft">Boutique</h3>
-            <ul className="mt-4 space-y-2 text-sm text-cream/65">
+            <ul className="mt-4 space-y-2 text-sm text-cream/80">
               <li>
                 <a href="#chaussures" className="hover:text-gold">
                   Chaussures
@@ -512,7 +512,7 @@ export function Footer() {
           </div>
           <div>
             <h3 className="eyebrow text-gold-soft">Contact</h3>
-            <ul className="mt-4 space-y-2 text-sm text-cream/65">
+            <ul className="mt-4 space-y-2 text-sm text-cream/80">
               <li>
                 <a href={`tel:${PHONE_TEL}`} className="hover:text-gold">
                   {PHONE_DISPLAY}
