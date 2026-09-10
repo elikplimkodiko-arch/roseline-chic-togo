@@ -11,11 +11,23 @@ import {
   X,
   Quote,
   Play,
+  Star,
+  BadgeCheck,
 } from "lucide-react";
 import { SectionTitle } from "./ProductGrid";
 import { selection, galleryImages } from "@/data/products";
 import { waProduct, waOrder, waDelivery, waGeneral, waCombo, PHONE_DISPLAY, PHONE_TEL } from "@/lib/wa";
 import comboVideoAsset from "@/assets/combo-sac-chaussure.mp4.asset.json";
+import cliente1 from "@/assets/cliente-1.jpg.asset.json";
+import cliente2 from "@/assets/cliente-2.jpg.asset.json";
+import cliente3 from "@/assets/cliente-3.jpg.asset.json";
+import cliente4 from "@/assets/cliente-4.jpg.asset.json";
+import cliente5 from "@/assets/cliente-5.jpg.asset.json";
+import cliente6 from "@/assets/cliente-6.jpg.asset.json";
+import cliente7 from "@/assets/cliente-7.jpg.asset.json";
+import cliente8 from "@/assets/cliente-8.jpg.asset.json";
+import cliente9 from "@/assets/cliente-9.jpg.asset.json";
+import cliente10 from "@/assets/cliente-10.jpg.asset.json";
 
 export function Selection() {
   return (
@@ -360,53 +372,92 @@ const testimonials = [
     text: "Mes mules sont arrivées rapidement à Lomé. La couleur est magnifique et elles sont vraiment confortables.",
     name: "Akossiwa",
     city: "Lomé",
+    model: "Mules H Arc-en-ciel",
+    avatar: cliente1.url,
   },
   {
     text: "Le sac est encore plus beau en vrai. Roseline a pris le temps de me conseiller et la livraison a été très simple.",
     name: "Kafui",
     city: "Tsévié",
+    model: "Sacs tressés ZARA",
+    avatar: cliente2.url,
   },
   {
     text: "J'ai commandé un combo sac et chaussures pour un événement. Tout était bien assorti et très soigné.",
     name: "Ablavi",
     city: "Kpalimé",
+    model: "Combo Monogramme",
+    avatar: cliente3.url,
   },
   {
     text: "Livraison rapide jusqu'à Kara et emballage impeccable. Mon cabas est spacieux et solide.",
     name: "Mawuena",
     city: "Kara",
+    model: "Grand Cabas Monogramme",
+    avatar: cliente4.url,
   },
   {
     text: "Les chaussures sont légères et confortables même après une longue journée. Très satisfaite de mon choix.",
     name: "Essi",
     city: "Sokodé",
+    model: "Mules Strass Éclat",
+    avatar: cliente5.url,
   },
   {
     text: "J'adore les couleurs proposées. Mon mini sac apporte exactement la touche vive que je cherchais.",
     name: "Fafali",
     city: "Atakpamé",
+    model: "Sacs tressés ZARA",
+    avatar: cliente6.url,
   },
   {
     text: "Commande claire sur WhatsApp et réception sans difficulté à Aného. La qualité du sac m'a agréablement surprise.",
     name: "Ayawa",
     city: "Aného",
+    model: "Sacs Pastel Chic",
+    avatar: cliente7.url,
   },
   {
     text: "Les doubles boucles sont élégantes et la semelle est très agréable. Je peux les porter toute la journée.",
     name: "Sena",
     city: "Notsè",
+    model: "Sandales Double Boucle",
+    avatar: cliente8.url,
   },
   {
     text: "Mon sac pastel est raffiné et facile à assortir. Le suivi jusqu'à la livraison était rassurant.",
     name: "Adjoa",
     city: "Dapaong",
+    model: "Sacs Pastel Chic",
+    avatar: cliente9.url,
   },
   {
     text: "Une belle sélection, un accueil attentionné et une livraison rapide. Je commanderai encore avec plaisir.",
     name: "Elom",
     city: "Lomé",
+    model: "Mules Blanches Boucle Or",
+    avatar: cliente10.url,
   },
 ];
+
+function Stars() {
+  return (
+    <div className="flex items-center gap-0.5" aria-label="5 étoiles sur 5">
+      {[0, 1, 2, 3, 4].map((i) => (
+        <Star key={i} className="h-4 w-4 fill-gold text-gold" strokeWidth={1} />
+      ))}
+    </div>
+  );
+}
+
+function WhatsAppGlyph({ className = "h-3.5 w-3.5" }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" className={className}>
+      <path d="M17.47 14.38c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.95 1.16-.17.2-.35.22-.65.07-.3-.15-1.27-.47-2.42-1.5-.9-.8-1.5-1.79-1.67-2.09-.17-.3-.02-.46.13-.61.15-.15.3-.35.45-.53.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.6-.92-2.19-.24-.57-.49-.5-.67-.5h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.01-1.04 2.46 0 1.45 1.06 2.85 1.21 3.05.15.2 2.09 3.2 5.06 4.37 2.98 1.16 2.98.77 3.52.72.54-.05 1.75-.71 2-1.4.25-.7.25-1.29.17-1.41-.07-.12-.27-.2-.57-.35z" />
+      <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21 5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2zm0 18.13c-1.55 0-3.07-.42-4.4-1.2l-.32-.19-3.11.82.83-3.04-.2-.33a8.16 8.16 0 0 1-1.25-4.34c0-4.53 3.69-8.21 8.22-8.21 4.53 0 8.21 3.68 8.21 8.21 0 4.53-3.68 8.21-8.21 8.21z" />
+    </svg>
+  );
+}
 
 export function Testimonials() {
   return (
@@ -417,15 +468,47 @@ export function Testimonials() {
           title="Ce que disent nos clientes"
           intro="Dix expériences inspirées des qualités les plus appréciées : conseil, confort, style et livraison nationale."
         />
-        <div className="mt-14 columns-1 gap-6 sm:columns-2 lg:columns-3">
+        <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           {testimonials.map((t) => (
-            <figure key={t.name} className="card-luxe mb-6 break-inside-avoid p-8">
-              <Quote className="h-6 w-6 text-gold" strokeWidth={1.5} />
-              <blockquote className="mt-5 font-serif text-xl leading-relaxed text-navy-deep italic">
+            <figure
+              key={t.name}
+              className="card-luxe flex flex-col p-7"
+            >
+              <span className="mb-5 inline-flex w-fit items-center gap-1 rounded-full bg-emerald/12 px-2.5 py-1 text-[0.6rem] font-bold tracking-[0.1em] uppercase text-emerald">
+                <BadgeCheck className="h-3.5 w-3.5" strokeWidth={2.5} /> Commande vérifiée
+              </span>
+              <div className="flex items-center gap-3">
+                <img
+                  src={t.avatar}
+                  alt={`${t.name}, cliente à ${t.city}`}
+                  loading="lazy"
+                  width={320}
+                  height={320}
+                  className="h-14 w-14 rounded-full border-2 border-gold object-cover"
+                />
+                <div>
+                  <p className="font-serif text-lg leading-tight font-semibold text-navy-deep">
+                    {t.name}
+                  </p>
+                  <p className="mt-0.5 inline-flex items-center gap-1 text-[0.7rem] font-bold tracking-[0.14em] uppercase text-royal">
+                    <MapPin className="h-3 w-3" strokeWidth={2.5} /> {t.city}
+                  </p>
+                </div>
+              </div>
+
+              <div className="mt-5 flex items-center justify-between gap-3">
+                <Stars />
+                <span className="inline-flex items-center gap-1.5 rounded-full bg-emerald px-2.5 py-1 text-[0.6rem] font-bold tracking-[0.12em] uppercase text-cream">
+                  <WhatsAppGlyph /> Avis WhatsApp
+                </span>
+              </div>
+
+              <Quote className="mt-5 h-5 w-5 text-gold" strokeWidth={1.5} />
+              <blockquote className="mt-2 flex-1 text-[0.95rem] leading-relaxed text-navy">
                 « {t.text} »
               </blockquote>
-              <figcaption className="mt-6 eyebrow text-royal">
-                {t.name} — {t.city}
+              <figcaption className="mt-5 border-t border-gold/30 pt-4 text-[0.7rem] font-bold tracking-[0.12em] uppercase text-navy-deep">
+                Modèle acheté : <span className="text-royal">{t.model}</span>
               </figcaption>
             </figure>
           ))}
