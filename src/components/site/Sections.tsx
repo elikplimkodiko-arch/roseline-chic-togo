@@ -77,26 +77,60 @@ export function Selection() {
   );
 }
 
+export function TrustStrip() {
+  const points = [
+    {
+      icon: ShieldCheck,
+      text: "Votre élégance entre de bonnes mains : chaque article est vérifié à la main avant expédition.",
+    },
+    {
+      icon: Users,
+      text: "Déjà plus de 500 clientes satisfaites à Lomé, Tsévié, Kara et dans tout le Togo.",
+    },
+    {
+      icon: Ruler,
+      text: "Conseils pointure et modèle en direct par WhatsApp avant validation.",
+    },
+    {
+      icon: Truck,
+      text: "Livraison rapide, soignée et suivie jusqu'à chez vous.",
+    },
+  ];
+
+  return (
+    <section className="border-y border-gold/40 bg-card px-5 py-10 lg:px-10">
+      <div className="mx-auto grid max-w-7xl gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        {points.map((p) => (
+          <div key={p.text} className="flex items-start gap-3">
+            <p.icon className="mt-0.5 h-5 w-5 shrink-0 text-gold" strokeWidth={2} />
+            <p className="text-[0.85rem] leading-relaxed font-semibold text-navy-deep">{p.text}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+}
+
 const reasons = [
   {
-    icon: Sparkles,
-    title: "Style affirmé",
-    text: "Des modèles sélectionnés avec un œil de styliste : lignes nettes, couleurs justes, allure professionnelle.",
+    icon: Gem,
+    title: "Authenticité",
+    text: "Des modèles choisis un par un chez des fournisseurs fiables, fidèles aux photos présentées.",
   },
   {
-    icon: Gem,
-    title: "Qualité durable",
-    text: "Matières soignées et finitions vérifiées une à une avant la mise en boutique.",
+    icon: ShieldCheck,
+    title: "Contrôle qualité",
+    text: "Matières, coutures et finitions vérifiées à la main avant chaque expédition.",
   },
   {
     icon: Truck,
-    title: "Livraison partout au Togo",
-    text: "Lomé, Kpalimé, Atakpamé, Sokodé, Kara… votre commande vous rejoint où que vous soyez.",
+    title: "Livraison Togo",
+    text: "Lomé, Kpalimé, Atakpamé, Sokodé, Kara… envoi rapide, soigné et suivi jusqu'à chez vous.",
   },
   {
     icon: HeartHandshake,
-    title: "Conseil personnalisé",
-    text: "On vous aide à choisir la taille, la couleur et le modèle adaptés à votre quotidien.",
+    title: "Écoute 7j/7",
+    text: "Conseils pointure, couleur et modèle en direct sur WhatsApp avant de valider.",
   },
 ];
 
