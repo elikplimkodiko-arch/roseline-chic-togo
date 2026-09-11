@@ -565,8 +565,11 @@ export function Footer() {
       <div className="mx-auto max-w-7xl">
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
           <div>
-            <span className="font-serif text-lg tracking-[0.18em] text-cream">
-              ROSELINE VIP SHOP
+            <span className="flex items-center gap-3">
+              <Monogram className="h-11 w-11 shrink-0" />
+              <span className="font-serif text-lg tracking-[0.18em] text-cream">
+                ROSELINE VIP SHOP
+              </span>
             </span>
             <p className="mt-4 text-sm leading-relaxed text-cream/60">
               Chaussures &amp; sacs professionnels. Boutique à Tsévié, livraison partout au Togo.
