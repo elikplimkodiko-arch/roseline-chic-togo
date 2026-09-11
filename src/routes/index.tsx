@@ -7,6 +7,7 @@ import WhatsAppFab from "@/components/site/WhatsAppFab";
 import {
   Selection,
   VideoShowcase,
+  TrustStrip,
   Why,
   About,
   HowTo,
@@ -68,30 +69,31 @@ function Index() {
       <Header />
       <main>
         <Hero />
+        <TrustStrip />
+        <VideoShowcase />
         <FilterableGrid
           id="chaussures"
           eyebrow="Collection"
           title="Chaussures élégantes"
-          intro="Escarpins, talons, mocassins, bottines et sandales : des modèles confortables et soignés pour le bureau comme pour les grandes occasions."
+          intro="Mules H, sandales à double boucle, mules strass et mules blanches : des modèles confortables et soignés pour le bureau comme pour les grandes occasions."
           categories={shoeCategories}
           items={shoes}
         />
-        <Selection />
-        <VideoShowcase />
         <FilterableGrid
           id="sacs"
           eyebrow="Collection"
           title="Sacs & combos VIP"
-          intro="Mini sacs colorés, grands cabas, pastels délicats et ensembles coordonnés : choisissez la pièce qui raconte votre style."
+          intro="Mini sacs tressés, grands cabas monogramme, pastels délicats et ensembles coordonnés : choisissez la pièce qui raconte votre style."
           categories={bagCategories}
           items={bags}
         />
-        <Why />
+        <Selection />
         <About />
+        <Why />
         <HowTo />
-        <Delivery />
-        <Gallery />
         <Testimonials />
+        <Gallery />
+        <Delivery />
         <Contact />
       </main>
       <Footer />

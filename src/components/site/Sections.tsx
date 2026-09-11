@@ -1,6 +1,6 @@
 import { useState } from "react";
 import {
-  Sparkles,
+  
   Gem,
   Truck,
   HeartHandshake,
@@ -13,8 +13,12 @@ import {
   Play,
   Star,
   BadgeCheck,
+  ShieldCheck,
+  Users,
+  Ruler,
 } from "lucide-react";
 import { SectionTitle } from "./ProductGrid";
+import Monogram from "./Monogram";
 import { selection, galleryImages } from "@/data/products";
 import { waProduct, waOrder, waDelivery, waGeneral, waCombo, PHONE_DISPLAY, PHONE_TEL } from "@/lib/wa";
 import comboVideoAsset from "@/assets/combo-sac-chaussure.mp4.asset.json";
@@ -73,26 +77,60 @@ export function Selection() {
   );
 }
 
+export function TrustStrip() {
+  const points = [
+    {
+      icon: ShieldCheck,
+      text: "Votre élégance entre de bonnes mains : chaque article est vérifié à la main avant expédition.",
+    },
+    {
+      icon: Users,
+      text: "Déjà plus de 500 clientes satisfaites à Lomé, Tsévié, Kara et dans tout le Togo.",
+    },
+    {
+      icon: Ruler,
+      text: "Conseils pointure et modèle en direct par WhatsApp avant validation.",
+    },
+    {
+      icon: Truck,
+      text: "Livraison rapide, soignée et suivie jusqu'à chez vous.",
+    },
+  ];
+
+  return (
+    <section className="border-y border-gold/40 bg-card px-5 py-10 lg:px-10">
+      <div className="mx-auto grid max-w-7xl gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        {points.map((p) => (
+          <div key={p.text} className="flex items-start gap-3">
+            <p.icon className="mt-0.5 h-5 w-5 shrink-0 text-gold" strokeWidth={2} />
+            <p className="text-[0.85rem] leading-relaxed font-semibold text-navy-deep">{p.text}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+}
+
 const reasons = [
   {
-    icon: Sparkles,
-    title: "Style affirmé",
-    text: "Des modèles sélectionnés avec un œil de styliste : lignes nettes, couleurs justes, allure professionnelle.",
+    icon: Gem,
+    title: "Authenticité",
+    text: "Des modèles choisis un par un chez des fournisseurs fiables, fidèles aux photos présentées.",
   },
   {
-    icon: Gem,
-    title: "Qualité durable",
-    text: "Matières soignées et finitions vérifiées une à une avant la mise en boutique.",
+    icon: ShieldCheck,
+    title: "Contrôle qualité",
+    text: "Matières, coutures et finitions vérifiées à la main avant chaque expédition.",
   },
   {
     icon: Truck,
-    title: "Livraison partout au Togo",
-    text: "Lomé, Kpalimé, Atakpamé, Sokodé, Kara… votre commande vous rejoint où que vous soyez.",
+    title: "Livraison Togo",
+    text: "Lomé, Kpalimé, Atakpamé, Sokodé, Kara… envoi rapide, soigné et suivi jusqu'à chez vous.",
   },
   {
     icon: HeartHandshake,
-    title: "Conseil personnalisé",
-    text: "On vous aide à choisir la taille, la couleur et le modèle adaptés à votre quotidien.",
+    title: "Écoute 7j/7",
+    text: "Conseils pointure, couleur et modèle en direct sur WhatsApp avant de valider.",
   },
 ];
 
@@ -121,7 +159,10 @@ export function Why() {
 
 export function VideoShowcase() {
   return (
-    <section className="relative overflow-hidden bg-coral px-5 py-24 lg:px-10 lg:py-32">
+    <section
+      id="video"
+      className="relative overflow-hidden bg-coral px-5 py-24 lg:px-10 lg:py-32"
+    >
       <div className="absolute inset-y-0 right-0 w-1/3 bg-emerald/20" aria-hidden="true" />
       <div className="relative mx-auto grid max-w-6xl items-center gap-14 lg:grid-cols-[0.82fr_1.18fr] lg:gap-24">
         <div className="relative mx-auto w-full max-w-sm">
@@ -200,6 +241,34 @@ export function About() {
             localement, la boutique accompagne une clientèle exigeante partout au Togo, avec le
             même soin qu'en boutique : écoute, conseil et suivi jusqu'à la livraison.
           </p>
+          <blockquote className="mt-7 border-l-2 border-gold bg-card p-6 shadow-soft">
+            <span className="eyebrow text-royal">Le mot de la Fondatrice</span>
+            <p className="mt-3 font-serif text-lg leading-relaxed text-navy-deep italic">
+              « Mon engagement personnel est de vous offrir l'élégance des grandes maisons avec un
+              service chaleureux et disponible à Tsévié et partout au Togo. »
+            </p>
+            <footer className="mt-3 text-[0.7rem] font-bold tracking-[0.18em] uppercase text-navy">
+              Roseline — Fondatrice &amp; Directrice Artistique
+            </footer>
+          </blockquote>
+          <ul className="mt-7 grid gap-3 text-sm font-semibold text-navy sm:grid-cols-2">
+            <li className="flex items-start gap-2">
+              <ShieldCheck className="mt-0.5 h-4 w-4 shrink-0 text-royal" strokeWidth={2.2} />{" "}
+              Chaque article vérifié à la main avant expédition
+            </li>
+            <li className="flex items-start gap-2">
+              <Ruler className="mt-0.5 h-4 w-4 shrink-0 text-royal" strokeWidth={2.2} /> Conseils
+              pointure et modèle en direct par WhatsApp
+            </li>
+            <li className="flex items-start gap-2">
+              <Users className="mt-0.5 h-4 w-4 shrink-0 text-royal" strokeWidth={2.2} /> Plus de 500
+              clientes satisfaites au Togo
+            </li>
+            <li className="flex items-start gap-2">
+              <Truck className="mt-0.5 h-4 w-4 shrink-0 text-royal" strokeWidth={2.2} /> Livraison
+              rapide, soignée et suivie
+            </li>
+          </ul>
           <a
             href={waGeneral}
             target="_blank"
@@ -461,7 +530,7 @@ function WhatsAppGlyph({ className = "h-3.5 w-3.5" }: { className?: string }) {
 
 export function Testimonials() {
   return (
-    <section className="bg-secondary px-5 py-20 lg:px-10 lg:py-28">
+    <section id="avis" className="bg-secondary px-5 py-20 lg:px-10 lg:py-28">
       <div className="mx-auto max-w-7xl">
         <SectionTitle
           eyebrow="Témoignages"
@@ -561,8 +630,11 @@ export function Footer() {
       <div className="mx-auto max-w-7xl">
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
           <div>
-            <span className="font-serif text-lg tracking-[0.18em] text-cream">
-              ROSELINE VIP SHOP
+            <span className="flex items-center gap-3">
+              <Monogram className="h-11 w-11 shrink-0" />
+              <span className="font-serif text-lg tracking-[0.18em] text-cream">
+                ROSELINE VIP SHOP
+              </span>
             </span>
             <p className="mt-4 text-sm leading-relaxed text-cream/60">
               Chaussures &amp; sacs professionnels. Boutique à Tsévié, livraison partout au Togo.
