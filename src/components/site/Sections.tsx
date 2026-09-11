@@ -204,6 +204,34 @@ export function About() {
             localement, la boutique accompagne une clientèle exigeante partout au Togo, avec le
             même soin qu'en boutique : écoute, conseil et suivi jusqu'à la livraison.
           </p>
+          <blockquote className="mt-7 border-l-2 border-gold bg-card p-6 shadow-soft">
+            <span className="eyebrow text-royal">Le mot de la Fondatrice</span>
+            <p className="mt-3 font-serif text-lg leading-relaxed text-navy-deep italic">
+              « Mon engagement personnel est de vous offrir l'élégance des grandes maisons avec un
+              service chaleureux et disponible à Tsévié et partout au Togo. »
+            </p>
+            <footer className="mt-3 text-[0.7rem] font-bold tracking-[0.18em] uppercase text-navy">
+              Roseline — Fondatrice &amp; Directrice Artistique
+            </footer>
+          </blockquote>
+          <ul className="mt-7 grid gap-3 text-sm font-semibold text-navy sm:grid-cols-2">
+            <li className="flex items-start gap-2">
+              <ShieldCheck className="mt-0.5 h-4 w-4 shrink-0 text-royal" strokeWidth={2.2} />{" "}
+              Chaque article vérifié à la main avant expédition
+            </li>
+            <li className="flex items-start gap-2">
+              <Ruler className="mt-0.5 h-4 w-4 shrink-0 text-royal" strokeWidth={2.2} /> Conseils
+              pointure et modèle en direct par WhatsApp
+            </li>
+            <li className="flex items-start gap-2">
+              <Users className="mt-0.5 h-4 w-4 shrink-0 text-royal" strokeWidth={2.2} /> Plus de 500
+              clientes satisfaites au Togo
+            </li>
+            <li className="flex items-start gap-2">
+              <Truck className="mt-0.5 h-4 w-4 shrink-0 text-royal" strokeWidth={2.2} /> Livraison
+              rapide, soignée et suivie
+            </li>
+          </ul>
           <a
             href={waGeneral}
             target="_blank"
