@@ -125,7 +125,10 @@ export function Why() {
 
 export function VideoShowcase() {
   return (
-    <section className="relative overflow-hidden bg-coral px-5 py-24 lg:px-10 lg:py-32">
+    <section
+      id="video"
+      className="relative overflow-hidden bg-coral px-5 py-24 lg:px-10 lg:py-32"
+    >
       <div className="absolute inset-y-0 right-0 w-1/3 bg-emerald/20" aria-hidden="true" />
       <div className="relative mx-auto grid max-w-6xl items-center gap-14 lg:grid-cols-[0.82fr_1.18fr] lg:gap-24">
         <div className="relative mx-auto w-full max-w-sm">
