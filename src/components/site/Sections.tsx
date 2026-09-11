@@ -13,8 +13,12 @@ import {
   Play,
   Star,
   BadgeCheck,
+  ShieldCheck,
+  Users,
+  Ruler,
 } from "lucide-react";
 import { SectionTitle } from "./ProductGrid";
+import Monogram from "./Monogram";
 import { selection, galleryImages } from "@/data/products";
 import { waProduct, waOrder, waDelivery, waGeneral, waCombo, PHONE_DISPLAY, PHONE_TEL } from "@/lib/wa";
 import comboVideoAsset from "@/assets/combo-sac-chaussure.mp4.asset.json";
