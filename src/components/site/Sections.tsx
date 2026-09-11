@@ -1,6 +1,6 @@
 import { useState } from "react";
 import {
-  Sparkles,
+  
   Gem,
   Truck,
   HeartHandshake,
