@@ -465,7 +465,7 @@ function WhatsAppGlyph({ className = "h-3.5 w-3.5" }: { className?: string }) {
 
 export function Testimonials() {
   return (
-    <section className="bg-secondary px-5 py-20 lg:px-10 lg:py-28">
+    <section id="avis" className="bg-secondary px-5 py-20 lg:px-10 lg:py-28">
       <div className="mx-auto max-w-7xl">
         <SectionTitle
           eyebrow="Témoignages"
